@@ -4,10 +4,11 @@ from tweepy.streaming import StreamListener
 import json
 import sentiment_mod as s
 
-ckey="VPwKRTOGDO2ZfWZBpaexKgmXx"
-csecret="KVXafx8Y2MGoXba22pZlWTGrNyEP66FcZp3AE1rOXHQqMTHc42"
-atoken="1097172671710875648-ggWCpbrldo32n2gw2pD8Bug9AK6dcx"
-asecret="vo0ZOFBLqs9bqPvyRHCHtCsqGR5YqDuDET0s98U1EUKUD"
+#PUT YOUR OWN CREDENTIALS BELOW
+ckey="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+csecret="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+atoken="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+asecret="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
 class listener(StreamListener):
     def on_data(self, data):
@@ -35,4 +36,5 @@ auth = OAuthHandler(ckey, csecret)
 auth.set_access_token(atoken, asecret)
 
 twitterStream = Stream(auth, listener())
+#ENTER YOUR OWN KEYWORD TO FILTER BY
 twitterStream.filter(track=["trump"])
